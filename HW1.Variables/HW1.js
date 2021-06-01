@@ -34,7 +34,7 @@ document.writeln(`<p> Сума до сплати з врахуванням зн�
 console.log (discount);
 
 let netProfitWithDiscountAndReducedPrice = totalPriceWithDiscount - (totalPrice/2);
-document.writeln(`<p> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice} </p>`);
+document.writeln(`<p> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)} </p>`);
 
 //advanced
 document.writeln(`<p  style="color:green;"> Максимальна ціна товару ${maximumItemPrice}, </p>
@@ -46,5 +46,6 @@ document.writeln(`<p  style="color:green;"> Максимальна ціна то
 <p  style="color:green;"> Решта при оплаті всіх товарів ${changeAfterPayment}, </p>
 <p  style="color:green;"> Середнє значення цін ${averagePrice}, </p>
 <p  style="color:green;"> Сума до сплати з врахуванням знижки ${totalPriceWithDiscount}, </p>
-<p  style="color:green;"> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice}. </p>`);
+<p  style="color:green;"> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)}.
+. </p>`);
 
