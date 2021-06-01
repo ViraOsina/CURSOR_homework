@@ -14,7 +14,7 @@ document.writeln(`<p> Загальна вартість товарів ${totalPr
 let totalPriceRounded = Math.floor(PRICE_ITEM1) + Math.floor(PRICE_ITEM2) + Math.floor(PRICE_ITEM3);
 document.writeln(`<p> Заокруглена вартість товарів ${totalPriceRounded} </p>`);
 
-let totalPriceRoundedToHundreds = (Math.ceil(totalPriceRounded/100)) * 100;
+let totalPriceRoundedToHundreds = (Math.round(totalPriceRounded/100)) * 100;
 document.writeln(`<p> Заокруглена до сотень вартість товарів ${totalPriceRoundedToHundreds} </p>`);
 
 let totalPriceRoundedEven = totalPriceRounded % 2;
@@ -46,6 +46,5 @@ document.writeln(`<p  style="color:green;"> Максимальна ціна то
 <p  style="color:green;"> Решта при оплаті всіх товарів ${changeAfterPayment}, </p>
 <p  style="color:green;"> Середнє значення цін ${averagePrice}, </p>
 <p  style="color:green;"> Сума до сплати з врахуванням знижки ${totalPriceWithDiscount}, </p>
-<p  style="color:green;"> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)}.
-. </p>`);
+<p  style="color:green;"> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)}.</p>`);
 
