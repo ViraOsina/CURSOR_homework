@@ -1,50 +1,49 @@
-const PRICE_ITEM1 = 15.678;
-const PRICE_ITEM2 = 123.965;
-const PRICE_ITEM3 = 90.2345;
+const priceItem1 = 15.678;
+const priceItem2 = 123.965;
+const priceItem3 = 90.2345;
+const clientPaid = 500;
 
-let maximumItemPrice = Math.max(PRICE_ITEM1, PRICE_ITEM2, PRICE_ITEM3);
-document.writeln(`<p> Максимальна ціна товару ${maximumItemPrice}</p>`);
+const maximumItemPrice = Math.max(priceItem1, priceItem2, priceItem3);
+console.log(`Максимальна ціна товару`, maximumItemPrice);
 
-let minimumItemPrice = Math.min(PRICE_ITEM1, PRICE_ITEM2, PRICE_ITEM3);
-document.writeln(`<p> Мінімальна ціна товару ${minimumItemPrice} </p>`);
+const minimumItemPrice = Math.min(priceItem1, priceItem2, priceItem3);
+console.log(`Мінімальна ціна товару`, minimumItemPrice);
 
-let totalPrice = PRICE_ITEM1 + PRICE_ITEM2 + PRICE_ITEM3;
-document.writeln(`<p> Загальна вартість товарів ${totalPrice} </p>`);
+const totalPrice = priceItem1 + priceItem2 + priceItem3;
+console.log(`Загальна вартість товарів`, totalPrice);
 
-let totalPriceRounded = Math.floor(PRICE_ITEM1) + Math.floor(PRICE_ITEM2) + Math.floor(PRICE_ITEM3);
-document.writeln(`<p> Заокруглена вартість товарів ${totalPriceRounded} </p>`);
+const totalPriceRounded = Math.floor(priceItem1) + Math.floor(priceItem2) + Math.floor(priceItem3);
+console.log(`Заокруглена вартість товарів`, totalPriceRounded);
 
-let totalPriceRoundedToHundreds = (Math.round(totalPriceRounded/100)) * 100;
-document.writeln(`<p> Заокруглена до сотень вартість товарів ${totalPriceRoundedToHundreds} </p>`);
+const totalPriceRoundedToHundreds = (Math.round(totalPriceRounded/100)) * 100;
+console.log(`Заокруглена до сотень вартість товарів`, totalPriceRoundedToHundreds);
 
-let totalPriceRoundedEven = totalPriceRounded % 2;
-document.writeln(`<p> Заокруглена вартість товарів є парним числом - ${totalPriceRoundedEven === 0} </p>
-                <p> Заокруглена вартість товарів є непарним числом - ${totalPriceRoundedEven === 1} </p>`);
+const isEven = totalPriceRounded % 2 === 0;
+console.log(`Заокруглена вартість товарів є парним числом - `, isEven);
+
+const changeAfterPayment = clientPaid - totalPrice;
+console.log(`Решта при оплаті всіх товарів`, changeAfterPayment);
+
+const averagePrice = (Math.ceil((totalPrice/3) * 100)) / 100;
+console.log(`Середнє значення цін`, averagePrice);
+
+const discount = Math.random();
+const totalPriceWithDiscount = (Math.ceil((totalPrice * (1 - discount)) * 100)) / 100;
+console.log(`Сума до сплати з врахуванням знижки`, totalPriceWithDiscount);
 
 
-let changeAfterPayment = 500 - totalPrice;
-document.writeln(`<p> Решта при оплаті всіх товарів ${changeAfterPayment} </p>`);
-
-let averagePrice = (Math.ceil((totalPrice/3) * 100)) / 100;
-document.writeln(`<p> Середнє значення цін ${averagePrice} </p>`);
-
-let discount = Math.random();
-let totalPriceWithDiscount = (Math.ceil((totalPrice * (1 - discount)) * 100)) / 100;
-document.writeln(`<p> Сума до сплати з врахуванням знижки ${totalPriceWithDiscount} </p>`);
-console.log (discount);
-
-let netProfitWithDiscountAndReducedPrice = totalPriceWithDiscount - (totalPrice/2);
-document.writeln(`<p> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)} </p>`);
+const netProfit = totalPriceWithDiscount - (totalPrice/2);
+console.log(`Чистий прибуток з врахуванням знижки`, netProfit.toFixed(2));
 
 //advanced
-document.writeln(`<p  style="color:green;"> Максимальна ціна товару ${maximumItemPrice}, </p>
-<p  style="color:green;"> Мінімальна ціна товару ${minimumItemPrice}, </p>
-<p  style="color:green;"> Загальна вартість товарів ${totalPrice}, </p>
-<p  style="color:green;"> Заокруглена вартість товарів ${totalPriceRounded}, </p>
-<p  style="color:green;"> Заокруглена до сотень вартість товарів ${totalPriceRoundedToHundreds}, </p>
-<p  style="color:green;"> Заокруглена вартість товарів є парним числом - ${totalPriceRoundedEven === 0}, </p>
-<p  style="color:green;"> Решта при оплаті всіх товарів ${changeAfterPayment}, </p>
-<p  style="color:green;"> Середнє значення цін ${averagePrice}, </p>
-<p  style="color:green;"> Сума до сплати з врахуванням знижки ${totalPriceWithDiscount}, </p>
-<p  style="color:green;"> Чистий прибуток з врахуванням знижки та вдвічі меншої собівартості товарів ${netProfitWithDiscountAndReducedPrice.toFixed(2)}.</p>`);
+document.writeln(`<div  style="color:green;"> Максимальна ціна товару ${maximumItemPrice}, <br>
+Мінімальна ціна товару ${minimumItemPrice}, <br>
+Загальна вартість товарів ${totalPrice}, <br>
+Заокруглена вартість товарів ${totalPriceRounded}, <br>
+Заокруглена до сотень вартість товарів ${totalPriceRoundedToHundreds}, <br>
+Заокруглена вартість товарів є парним числом - ${isEven}, <br>
+Решта при оплаті всіх товарів ${changeAfterPayment}, <br>
+Середнє значення цін ${averagePrice}, <br>
+Сума до сплати з врахуванням знижки ${totalPriceWithDiscount}, <br>
+Чистий прибуток з врахуванням знижки  ${netProfit.toFixed(2)}.<br> </div>`);
 
