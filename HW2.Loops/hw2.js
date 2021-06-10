@@ -13,16 +13,12 @@ while (secondInput == NaN || !Number.isInteger(secondInput)) {
 
 let noEven = confirm('Пропускати парні числа?');
 
-let N = Math.min(firstInput, secondInput);
-let M = Math.max(firstInput, secondInput);
-
-
-
-for (N; N<=M; N++){  
-    if (noEven && N % 2 === 0){
+for (let intervalStart = Math.min(firstInput, secondInput), intervalEnd = Math.max(firstInput, secondInput);
+intervalStart<=intervalEnd; intervalStart++){  
+    if (noEven && intervalStart % 2 === 0){
         continue
     }    
-    sum = N + sum;
+    sum = intervalStart + sum;
 }
 
 document.writeln(`Сума = ${sum}`);
