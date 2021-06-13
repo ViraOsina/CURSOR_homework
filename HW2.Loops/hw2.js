@@ -11,10 +11,11 @@ while (secondInput == NaN || !Number.isInteger(secondInput)) {
     secondInput = +prompt('Можна ввести ЛИШЕ ціле число');
 }
 
-let noEven = confirm('Пропускати парні числа?');
+const noEven = confirm('Пропускати парні числа?');
+let intervalStart = Math.min(firstInput, secondInput);
+let intervalEnd = Math.max(firstInput, secondInput);
 
-for (let intervalStart = Math.min(firstInput, secondInput), intervalEnd = Math.max(firstInput, secondInput);
-intervalStart<=intervalEnd; intervalStart++){  
+for (let i = intervalStart; i<=intervalEnd; i++){  
     if (noEven && intervalStart % 2 === 0){
         continue
     }    
