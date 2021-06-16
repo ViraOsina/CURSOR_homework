@@ -12,8 +12,8 @@ while (secondInput == NaN || !Number.isInteger(secondInput)) {
 }
 
 const noEven = confirm('Пропускати парні числа?');
-let intervalStart = Math.min(firstInput, secondInput);
-let intervalEnd = Math.max(firstInput, secondInput);
+const intervalStart = Math.min(firstInput, secondInput);
+const intervalEnd = Math.max(firstInput, secondInput);
 
 for (let i = intervalStart; i<=intervalEnd; i++){  
     if (noEven && intervalStart % 2 === 0){
