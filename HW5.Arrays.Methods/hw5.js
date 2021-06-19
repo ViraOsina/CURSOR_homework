@@ -141,23 +141,32 @@ console.log("task 9", "divide by 3 letters", divideByThree("Commander"));
 
 //Створіть функцію generateCombinations(word), 
 //яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
-function generateCombinations(string) {
-    if (string.length > 10) {
-        return 'The word is too long. Please use less than 10 characters';
+function generateCombinations(word) {
+   if (word.length > 10) {
+        return 'the word is too long. Please keep it under 10 letters';
     }
-    
-    const firstEl = string[0];
-    const rest = string.slice(1);
-    const combinationWithoutFirst = generateCombinations(rest);
-    const combinations = [];
+    function permutation(word) {
+        const letters = word.split('');
+        let combinations = [];
+        if (letters.length === 1) return letters.join(' ');
 
-    combinationWithoutFirst.forEach(perm => {
-        for (let i = 0; i <= perm.length; i++) {
-            const combinationWithFirst = [...perm.slice(0, i), firstEl, ...perm.slice(i)];
-            combinations.push(combinationWithFirst);
+        for (let i = 0; i < letters.length; i++) {
+            const firstLetter = letters[i];
+            const restLetters = letters.slice(0, i).concat(letters.slice(i + 1));
+            const restLettersCombinations = permutation(restLetters.join(''));
+
+            for (let j = 0; j < restLettersCombinations.length; j++) {
+                const combinationArray = [firstLetter].concat(restLettersCombinations[j]);
+                let newWord = combinationArray.join('')
+                if (combinations.includes(newWord)) continue;
+                else combinations.push(newWord);
+            }
         }
-    })
-    return combinations;
+
+        return combinations;
+    }
+    return `${permutation(word)}`;
 }
+
 console.log("task 10", "generate combinations", generateCombinations("olga"));
 
