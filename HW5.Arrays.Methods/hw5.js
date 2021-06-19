@@ -148,7 +148,7 @@ function generateCombinations(word) {
     function permutation(word) {
         const letters = word.split('');
         let combinations = [];
-        if (letters.length === 1) return letters.join(' ');
+        if (letters.length === 1) return letters;
 
         for (let i = 0; i < letters.length; i++) {
             const firstLetter = letters[i];
