@@ -141,23 +141,23 @@ console.log("task 9", "divide by 3 letters", divideByThree("Commander"));
 
 //Створіть функцію generateCombinations(word), 
 //яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові.
-function generateCombinations(word) {
-    if (word.length > 10) {
+function generateCombinations(string) {
+    if (string.length > 10) {
         return 'The word is too long. Please use less than 10 characters';
     }
-    let combinations = [];
+    
+    const firstEl = string[0];
+    const rest = string.slice(1);
+    const combinationWithoutFirst = generateCombinations(rest);
+    const combinations = [];
 
-    for (let i = 0; i < word.length; i++) {
-        let char = word[i];
-
-        let remainingChars = word.slice(0, i) + word.slice(i + 1, word.length);
-
-        for (let combination of generateCombinations(remainingChars)) {
-            combinations.push(char + combination);
+    combinationWithoutFirst.forEach(perm => {
+        for (let i = 0; i <= perm.length; i++) {
+            const combinationWithFirst = [...perm.slice(0, i), firstEl, ...perm.slice(i)];
+            combinations.push(combinationWithFirst);
         }
-        return combinations;  
-    }
+    })
+    return combinations;
 }
 console.log("task 10", "generate combinations", generateCombinations("olga"));
 
-//why does not work? https://levelup.gitconnected.com/find-all-permutations-of-a-string-in-javascript-af41bfe072d2
