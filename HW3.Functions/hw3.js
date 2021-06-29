@@ -111,6 +111,18 @@ function removeDuplicates(text) {
     }
 }
 
+//task11 (advised by Mentor)
+/*function removeDuplicates(text){
+    let newExpression = '';
+
+    for (let i = 0; i < text.length; i++) {
+        if (text.lastIndexOf(text[i]) === text.indexOf(text[i])) {
+           newExpression += text[i];
+        }
+    }
+    return newExpression;
+}*/
+
 
 //DOM outputs
 function output1() {
