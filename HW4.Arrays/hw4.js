@@ -7,7 +7,8 @@ const marks = [4, 5, 5, 3, 4, 5];
 function studentPairs(students) {
     const girls = [];
     const boys = [];
-    let pairs = [];
+    const pairs = [];
+
     for (let i = 0; i < students.length; i++) {
         if (students[i].split("").slice(-1).pop() === "а") {
             girls.push(students[i]);
@@ -15,10 +16,13 @@ function studentPairs(students) {
             boys.push(students[i]);
         }
     }
+
     const pairsLength = (students.length) / 2;
+
     for (let i = 0; i < pairsLength; i++) {
         pairs.push(` ${boys[i]}, ${girls[i]}`);
     }
+
     return pairs;
 }
 
@@ -31,9 +35,11 @@ function output1() {
 const pairs = studentPairs(students);
 function pairsThemes(pairs, themes) {
     let themesForPairs = [];
+
     for (let i = 0; i < pairs.length; i++) {
         themesForPairs.push(pairs[i].split(",").join(" і ").concat(": ").concat(themes[i]));
     }
+
     return themesForPairs;
 }
 
@@ -45,9 +51,11 @@ function output2() {
 //task 3
 function studentGrades(students, marks) {
     let studentMarks = [];
+
     for (let i = 0; i < students.length; i++) {
         studentMarks[i] = [students[i], marks[i]];
     }
+
     return studentMarks;
 }
 
@@ -60,10 +68,16 @@ function output3() {
 const pairThemes = pairsThemes(pairs, themes);
 function pairRandomGrades(pairThemes) {
     let pairGrades = [];
+
     for (let i = 0; i < pairThemes.length; i++) {
-        pairGrades[i] = [pairThemes[i].concat(" - ").concat([Math.floor((Math.random() * 5) + 1)])];
+        pairGrades[i] = [pairThemes[i].concat(" - ").concat([randomNum()])];
     }
+
     return pairGrades;
+}
+
+function randomNum() {
+    return Math.floor((Math.random() * 5) + 1);
 }
 
 const result4 = document.getElementById("Task4");
