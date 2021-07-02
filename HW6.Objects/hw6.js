@@ -26,10 +26,10 @@ const students = [{
 
 //Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] 
 //- яка повертає список предметів для конкретного студента.
-function getSubjects (studentId) {
-    let studentSubjects = Object.keys(studentId.subjects);
+function getSubjects (student) {
+    let studentSubjects = Object.keys(student.subjects);
     const listOfSubjects = studentSubjects.map(subject =>
-        subject.charAt(0).toUpperCase() + subject.slice(1).replaceAll('_', " ")
+        subject[0].toUpperCase() + subject.slice(1).replaceAll('_', " ")
     );
     return listOfSubjects;
 }
@@ -39,25 +39,25 @@ console.log('task 1. List of subjects for student: ', getSubjects(students[0]));
 //Створіть функцію getAverageMark(students[0]) --> 3.79  
 //– яка поверне середню оцінку по усім предметам для переданого студента.
 
-function getAverageMark(studentID) {
-    let marks = [].concat(...Object.values(students[studentID].subjects));
+function getAverageMark(student) {
+    let marks = Object.values(student.subjects).flat();
     let averageMark = (marks.reduce((sum, mark) => sum + mark) / marks.length).toFixed(2);
     return averageMark;
 }
 
-console.log('task 2. Average grade: ', getAverageMark(1));
+console.log('task 2. Average grade: ', getAverageMark(students[0]));
 
 //Створіть функцію getStudentInfo(students[0]) --> { "course": 3, "name": "Tanya", "averageMark": 3.79} 
 //– яка повертає інформацію загального виду по переданому студенту .
 
-function getStudentInfo(studentId){
-    const course = students[studentId].course;
-    const name = students[studentId].name;
-    const averageMark = getAverageMark(studentId);
+function getStudentInfo(student){
+    const course = student.course;
+    const name = student.name;
+    const averageMark = getAverageMark(student);
     return { course, name, averageMark };
 }
 
-console.log('task 3.', getStudentInfo(0));
+console.log('task 3.', getStudentInfo(students[0]));
 
 //Ствoріть функцію getStudentsNames(students) --> ["Anton", "Tanya, "Victor"] 
 //– яка повертає імена студентів у алфавітному порядку.
@@ -75,7 +75,7 @@ function getBestStudent(students){
     let averageGrades = [];
     for (let i = 0; i < students.length; i++) {
 
-        let averageGrade = +getAverageMark(i);
+        let averageGrade = +getAverageMark(students[i]);
         averageGrades.push(averageGrade);
         averageGrades.sort((a,b) => b - a);
 
