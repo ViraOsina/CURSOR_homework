@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tileBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2.header{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: rgb(11, 112, 87);
+    text-align: center;
+  }
