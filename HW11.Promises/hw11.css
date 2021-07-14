@@ -1,0 +1,73 @@
+
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    background: url("./goAfST.jpg"); 
+    min-height: 100vh;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin-left: 50px;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.output {
+    display: flex;
+    font-size: 28px;
+    min-height: 35px;
+    margin-bottom: 15px;
+    color: rgb(206, 29, 29);
+    justify-content: center;
+    max-width: 50%;
+
+}
+
+.numberOfChar {
+    display: flex;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
+.numberOfChar label {
+    margin-right: 10px;
+}
+
+.numberOfChar input {
+    margin-left: 10px;
+    margin-right: 10px;
+    min-height: 35px;
+}
+
+.button {
+    margin-left: 10px;
+    min-width: 100px;
+    min-height: 35px;
+    border-radius: 20px;
+    background-color: rgb(182, 60, 16);
+    font: bolder;
+    color: darkgrey;
+    border: none;
+    transition-duration: 0.4s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    background-color: rgb(199, 143, 123);
+    color: rgb(8, 8, 8);
+}
+
+
+
+
+
