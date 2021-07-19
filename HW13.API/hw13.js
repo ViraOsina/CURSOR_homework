@@ -88,8 +88,12 @@ function drawCharacters (selectedFilm) {
     renderCharacters (selectedFilm);
 }
 let filmOption = document.getElementById("char-options");
-document.querySelector("#show-characters").addEventListener("click", () => {drawCharacters(filmOption.value)});
 
+document.querySelector("#show-characters").addEventListener("click", () => 
+    {drawCharacters(filmOption.value)});
+
+//Wookiee
+//https://swapi.dev/api/people/54/?format=wookiee
 
 
 
