@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Fresca&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body  {
+    background-image: url("./images/star-wars-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Fresca', sans-serif;
+}
+
+.logo {
+    max-width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    width: 350px;
+    font-size: 20px;
+    font-family: 'Fresca', sans-serif;
+}
+
+button:hover {
+    background:black;
+    color:white;
+    transition: all 0.3s ease-in;
+}
+
+#char-options {
+    font-size: 20px;
+    font-family: 'Fresca', sans-serif;
+    width: 350px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 8px;
+    color:white;
+    border: none;
+}
+
+option {
+    color: black;
+    background: grey;
+}
+option:hover {
+   color: #fff;
+}
+
+.container {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.line1 {
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.information-card {
+    width: 350px;
+    height: 400px;
+    background: rgba(8, 0, 0, 0.548);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fresca', sans-serif;
+    border-radius: 5px;
+    margin: 5px;
+    
+}
+
+.img-box {
+    padding: 10px;
+}
+    
+.img-box img{
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 250px;
+}
+
+.information {
+    width: 100%;
+    height: auto;
+    padding-left: 15px;
+    justify-content: center;
+}
+
+.information p {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.name {
+    color: yellow;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    justify-self: flex-start;
+}
+
+.next {
+    align-self:  center;
+    justify-self: flex-start;
+    width: 150px;
+    background: rgba(245, 244, 244, 0.548);
+        
+}
+
