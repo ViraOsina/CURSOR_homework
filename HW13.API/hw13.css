@@ -17,7 +17,6 @@ body  {
     max-width: 200px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 20px;
 }
 
 button {
@@ -30,7 +29,6 @@ button {
     padding: 8px;
     border: none;
     cursor: pointer;
-    width: 350px;
     font-size: 20px;
     font-family: 'Fresca', sans-serif;
 }
@@ -71,6 +69,13 @@ option:hover {
 .line1 {
     justify-content: center;
     margin-bottom: 10px;
+}
+
+.line2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .information-card {
@@ -116,17 +121,36 @@ option:hover {
     color: yellow;
 }
 
-header {
+.header {
     display: flex;
-    justify-content: space-between;
-    justify-self: flex-start;
+}    
+
+.next, .previous{
+    align-self:  center;
+    justify-self: center;
+    width: 200px;
+    max-height: 80px;
+    margin: 10px;
+    background: rgba(245, 244, 244, 0.548);
+    color: rgb(16, 16, 37);
 }
 
-.next {
-    align-self:  center;
-    justify-self: flex-start;
-    width: 150px;
-    background: rgba(245, 244, 244, 0.548);
-        
+.header-btns {
+    display: flex;
+    
+}
+
+#show-characters, #planets-btn, #char-options {
+    width: 350px;
+}
+
+.home {
+    margin-right: 10px;
+    width: 250px;
+}
+
+#translate {
+    margin-left: 10px;
+    width: 250px;
 }
 
