@@ -35,7 +35,8 @@ class Student {
         if (this.dismiss) {
             return null;
         } else {
-            this.marks.push(newMark);
+            this.marks = [...this.marks, newMark]
+            return this.marks;
         }
     }
 
