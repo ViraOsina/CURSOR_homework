@@ -20,7 +20,7 @@ async function getRandomChinese() {
     let result = '';
 
     for (let i = 0; i < length; i++) {
-        let promise = new Promise((resolve) => {
+        const promise = new Promise((resolve) => {
           setTimeout(() => {
                 resolve(chineseChar());
           }, 50 * length);
