@@ -1,0 +1,15 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Fresca&display=swap');*/
+
+.label {
+    background: rgba(240,170,137, 0.7);
+    border-radius: 8px;
+    color: rgb(65, 13, 13);
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 8px;
+    border: none;
+    font-size: 24px;
+    font-family: 'Fresca', sans-serif;
+}
+
