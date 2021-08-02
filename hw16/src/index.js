@@ -1,4 +1,10 @@
 import _ from 'lodash';
+import './styles/style.css';
+import './styles/hw10.css';
+import './styles/hw9.css';
+import './styles/hw14.css';
+import './styles/hw13.css';
+
 
 import { maximumItemPrice, priceItem1, priceItem2, priceItem3 } from './js/HW1.js';
 import { returnSum } from './js/hw2.js';
@@ -85,8 +91,7 @@ function output8() {
 document.getElementById('task8').addEventListener("click", output8);
 
 function output9() {
-    const outputHw9 = document.getElementById('hw9');
-
+    const outputHw9 = document.querySelector('.tileBox');
     outputHw9.innerHTML = generateTilesInterval();
 }
 
@@ -117,5 +122,6 @@ const outputHw14 = document.getElementById('hw14');
 document.getElementById('task14').addEventListener("click",  () => {
     outputHw14.innerHTML = newNumberGenerator.next().value;
 })
+
 
 

@@ -20,7 +20,7 @@ function buildTile(size = tileSize) {
 }
 
 function generateTileBoard(rows = rowNum, columns = colNum) {
-    const container = document.getElementById('hw9');
+    const container = document.querySelector('.tileBox');
     container.innerHTML = '';
     container.style.width = `${colNum * tileSize}px`;
     container.style.height = `${rowNum * tileSize}px`;

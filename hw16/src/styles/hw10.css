@@ -19,6 +19,10 @@
     background: rgba(0,0,0,0.4);
     text-shadow: 0 0 5px black;
   }
+
+  .key:hover {
+    border: 2px solid rgb(245, 221, 4);
+  }
   
   .playing {
     transform: scale(1.1);

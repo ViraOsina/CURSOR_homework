@@ -1,0 +1,12 @@
+.tileBox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tileBoard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
