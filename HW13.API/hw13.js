@@ -7,7 +7,7 @@ let nextPage = 1;
 async function renderPlanets() {
     localStorage.setItem('page', 'planets');
     let planets = null;
-    let language = document.querySelector("#translate").innerHTML;
+    const language = document.querySelector("#translate").innerHTML;
     const planetLink = 'https://swapi.dev/api/planets/?page=' + nextPage;
 
     fetch(planetLink)
@@ -17,7 +17,7 @@ async function renderPlanets() {
             let planetName = '';
             planets = data.results;
 
-            let WookiePlanetLinks = data.results.map((planet) => { return planet.url + `?format=wookiee` });
+            const wookiePlanetLinks = data.results.map((planet) => planet.url + `?format=wookiee`);
 
             if (language === 'Translate to Wookie') {
 
@@ -26,7 +26,7 @@ async function renderPlanets() {
                     drawPlanets(planetName);
                 }
             } else {
-                for (wookieLink of WookiePlanetLinks) {
+                for (wookieLink of wookiePlanetLinks) {
 
                     fetch(wookieLink).then((result) => result.json())
                         .then((wookieData) => {  
@@ -39,7 +39,7 @@ async function renderPlanets() {
 }
 
 function drawPlanets(planetName) {
-    let newPlanet = document.createElement("div");
+    const newPlanet = document.createElement("div");
     newPlanet.classList.add("information-card");
     newPlanet.innerHTML = `<div class="img-box">
                 <img src="./images/planet.jpg" alt="planet">
@@ -58,10 +58,10 @@ function createNextBtn() {
 }
 
 function createPreviousBtn() {
-    const PreviousBtn = document.createElement("button");
-    PreviousBtn.classList.add("previous");
-    PreviousBtn.innerHTML = 'Previous page';
-    header.append(PreviousBtn);
+    const previousBtn = document.createElement("button");
+    previousBtn.classList.add("previous");
+    previousBtn.innerHTML = 'Previous page';
+    header.append(previousBtn);
 }
 
 async function displayPlanets() {
@@ -94,7 +94,7 @@ function previousPageOnClick() {
 async function renderCharacters(selectedFilm) {
     localStorage.clear();
     let characters = null;
-    let language = document.querySelector("#translate").innerHTML;
+    const language = document.querySelector("#translate").innerHTML;
     const filmLink = 'https://swapi.dev/api/films/' + selectedFilm;
     console.log(language)
        
@@ -119,8 +119,8 @@ async function renderCharacters(selectedFilm) {
                             (result.gender === 'female' || result.rrwowhwaworc === 'wwwoscraanwo') ? 
                             String.fromCodePoint('0x2640') :
                             String.fromCodePoint('0x26A7');
-                        let name = (language === 'Translate to English') ? result.whrascwo : result.name;
-                        let age = (language === 'Translate to English') ? 
+                        const name = (language === 'Translate to English') ? result.whrascwo : result.name;
+                        const age = (language === 'Translate to English') ? 
                         result.rhahrcaoac_roworarc: result.birth_year;
 
                         informationCard.innerHTML = `<div class="img-box">
